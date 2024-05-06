@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thHvzfsd+8FRz3QDz68flXAMGjZwq5nUk3vzKtWLa2BR" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa; /* светло-серый фон */
+            color: #333; /* темный текст */
+            font-family: Arial, sans-serif; /* шрифт */
+             background-image: url('@Url.Content("~/images/background.jpg")'); /* фоновое изображение */
+              background-size: cover; /* растянуть изображение на всю высоту блока */
+              background-position: center;
+              padding: 2rem;
+                 border-radius: 0; /* без скругления углов */
+        }
+
+        .jumbotron {
+             
+            color: #fff; /* белый текст */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* тень текста */
+        }
+
+        .jumbotron h1 {
+            font-size: 3rem;
+        }
+
+        .jumbotron p {
+            font-size: 1.5rem;
+        }
+
+        .learn-link {
+            color: #fff; /* белая ссылка */
+        }
+
+        .learn-link:hover {
+            color: #f8f9fa; /* светло-серая ссылка при наведении */
+        }
+        p,h1,h2,h3{
+            color: rgb(21, 230, 223);
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1 style="margin-top: 100px; font-weight: 700;">Welcome to SABR Bank</h1>
+        <p style="font-weight: 700">Explore our services and learn more about financial solutions.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a></p>
+    
+
+    <div class="container">
+        <div style="margin-top: 400px;" class="row">
+            <div  class="col-md-6">
+                <h2 style="font-weight: 700">About Us</h2>
+                <p style="font-weight: 700">Learn about our mission, vision, and values.</p>
+                <p><a class="learn-link" href="#">Learn More &raquo;</a></p>
+            </div>
+            <div  class="col-md-6">
+                <h2>Services</h2>
+                <p style="font-weight: 700">Explore our range of banking services for individuals and businesses.</p>
+                <p style="font-weight: 700"><a class="learn-link" href="#">View Services &raquo;</a></p>
+            </div>
+        </div>
+</div>
+        <hr />
+
+                  <footer style="background-color: rgb(142, 144, 145);">
+
+            <p style="font-weight: 700;">&copy; 2024 SABR Bank</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    @* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-RKsYAZVJnZiVLhzLoP9M48Wuv5gfr8T4hpjV0gFvYbeG/sRBdD7Vt3W2+HdplL6K" crossorigin="anonymous"></script> *@
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shHuhRnPwQFZ5UuTfxF2I1P+iHp0AfNJtNJ0f" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RazorApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #2090d6; /* светло-серый фон */
+            color: #333; /* темный текст */
+            font-family: Arial, sans-serif; /* шрифт */
+        }
+
+        header {
+            background-color: #22cef0; /* белый фон */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* тень */
+           
+        }
+
+        .navbar-brand {
+            color: #333 !important; /* темный цвет для логотипа */
+        }
+
+        .navbar-nav .nav-link {
+            color: #333 !important; /* темный цвет для ссылок */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #555 !important; /* темно-серый цвет при наведении на ссылку */
+        }
+
+        main {
+            padding: 20px 0; /* отступ сверху и снизу для контента */
+        }
+
+        footer {
+            background-color: #333; /* темный фон подвала */
+            color: #fff; /* белый текст */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff !important; /* белый цвет для ссылок в подвале */
+        }
+
+        footer a:hover {
+            color: #ccc !important; /* светло-серый цвет при наведении на ссылку в подвале */
+        }
+    </style>
+    <link rel="stylesheet" href="~/RazorApp.styles.css" asp-append-version="true" />
+</head>
+<body >
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">RazorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a style="color: red;" class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                            <li class="nav-item">
+                            <a style="color: darkblue;" class="nav-link " asp-area="" asp-page="/Customer/GetCustomers">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: darkblue;" class="nav-link " asp-area="" asp-page="/Account/GetAccounts">Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: darkblue;" class="nav-link " asp-area="" asp-page="/Transaction/GetTransactions">Transaction</a>
+                        </li>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+       
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

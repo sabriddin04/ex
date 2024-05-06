@@ -1,0 +1,77 @@
+@page "{id:int}"
+@model RazorApp.Pages.Transaction.UpdateTransactionModel
+@{
+    ViewData["Title"] = "Update Transaction";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">@ViewData["Title"]</h1>
+
+        <form method="post">
+            <input type="hidden" asp-for="Transaction.Id" />
+
+            <div class="form-group">
+                <label asp-for="Transaction.FromAccountId">From Account ID:</label>
+                <input asp-for="Transaction.FromAccountId" class="form-control" />
+                <span asp-validation-for="Transaction.FromAccountId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.ToAccountId">To Account ID:</label>
+                <input asp-for="Transaction.ToAccountId" class="form-control" />
+                <span asp-validation-for="Transaction.ToAccountId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.Amount">Amount:</label>
+                <input asp-for="Transaction.Amount" class="form-control" />
+                <span asp-validation-for="Transaction.Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.TransactionDate">Transaction Date:</label>
+                <input asp-for="Transaction.TransactionDate" class="form-control" />
+                <span asp-validation-for="Transaction.TransactionDate" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Transaction</button>
+            <a asp-page="/Transaction/GetTransactions" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

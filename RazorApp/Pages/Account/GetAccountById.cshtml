@@ -1,0 +1,119 @@
+@page
+@model GetAccountByIdModel
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #717376;
+            color: #eae5e5;
+            
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+           
+        }
+
+        .customer-info {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .customer-info h2 {
+            color: #3498db;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .customer-info ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .customer-info li {
+            margin-bottom: 10px;
+        }
+
+        .alert-danger {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-color: #3498db;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #2186c4;
+            border-color: #2186c4;
+        }
+
+        .btn-back:focus {
+            box-shadow: none;
+        }
+
+        .btn-back:active {
+            transform: translateY(1px);
+        }
+
+        .customer-info h2:before {
+            content: "\1F4CD";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style=" margin-left: 150px;" class="mb-4">@ViewData["Title"]</h1>
+
+        @if (Model.Account != null)
+        {
+            <div style=" margin-left: 150px;" >
+               
+                <ul>
+                    <li style="font-size: 30px;"><strong>ID:</strong> @Model.Account.Id</li>
+                    <li  style="font-size: 30px;"><strong>AccountNumber :</strong> @Model.Account.AccountNumber</li>
+                    <li  style="font-size: 30px;"><strong> Balance:</strong> @Model.Account.Balance</li>
+                    <li  style="font-size: 30px;"><strong> AccountType:</strong> @Model.Account.AccountType</li>
+                    <li  style="font-size: 30px;"><strong> CustomerId:</strong> @Model.Account.CustomerId</li>
+                </ul>
+    
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger">Account not found.</div>
+        }
+
+        <a style="margin-left: 280px;" asp-page="/Account/GetAccounts" class="btn btn-back">Back to Accounts</a>
+    </div>
+
+    <!-- Optional: Add your custom JavaScript here -->
+    <script>
+        // Your custom JavaScript code goes here
+        console.log("JavaScript loaded!");
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+@page
+@model CreateCustomerModel
+@{
+    ViewData["Title"] = "Create New Customer";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Обновленные стили для страницы создания нового аккаунта */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+
+            background-image: url('@Url.Content("~/images/vector.png")');
+            background-size: cover;
+            /* растянуть изображение на всю высоту блока */
+            background-position: center;
+
+            border-radius: 0;
+            /* без скругления углов */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background-color: rgb(203, 191, 185);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            /* Тень */
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-cancel {
+            margin-right: 10px;
+            background-color: #dc3545;
+            /* Красная кнопка */
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center" style="color: #333; font-weight: 900;font-size: 50px;" class="text-center">
+            @ViewData["Title"]</h1>
+
+        <div class="form-container">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="CustomerDto.Name">Customer Name:</label>
+                    <input asp-for="CustomerDto.Name" class="form-control" />
+                    <span asp-validation-for="CustomerDto.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerDto.Email">Customer Email:</label>
+                    <input asp-for="CustomerDto.Email" class="form-control" />
+                    <span asp-validation-for="CustomerDto.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerDto.Address">Customer Address:</label>
+                    <input asp-for="CustomerDto.Address" class="form-control" />
+                    <span asp-validation-for="CustomerDto.Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerDto.PhoneNumber">Customer Phone Number:</label>
+                    <input asp-for="CustomerDto.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="CustomerDto.PhoneNumber" class="text-danger"></span>
+                </div>
+
+
+                <button style="margin-left: 230px;" type="submit" class="btn btn-primary">Create Customer</button>
+                <a asp-page="/Customer/GetCustomers" class="btn btn-secondary btn-cancel">Cancel</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

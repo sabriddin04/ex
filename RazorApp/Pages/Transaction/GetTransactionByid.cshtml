@@ -1,0 +1,93 @@
+@page
+@model GetTransactionByIdModel
+@{
+    ViewData["Title"] = "Transaction Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #717376;
+            color: #eae5e5;
+            
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+           
+        }
+
+        .alert-danger {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-color: #3498db;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #2186c4;
+            border-color: #2186c4;
+        }
+
+        .btn-back:focus {
+            box-shadow: none;
+        }
+
+        .btn-back:active {
+            transform: translateY(1px);
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style=" margin-left: 150px;" class="mb-4">@ViewData["Title"]</h1>
+
+        @if (Model.Transaction != null)
+        {
+            <div style=" margin-left: 150px;" >
+               
+                <ul>
+                    <li style="font-size: 30px;"><strong>ID:</strong> @Model.Transaction.Id</li>
+                    <li  style="font-size: 30px;"><strong>Transaction FromAccountId:</strong> @Model.Transaction.FromAccountId</li>
+                    <li  style="font-size: 30px;"><strong>Transaction ToAccountId:</strong> @Model.Transaction.ToAccountId</li>
+                    <li  style="font-size: 30px;"><strong>Transaction Amount:</strong> @Model.Transaction.Amount</li>
+                    <li  style="font-size: 30px;"><strong>TransactionDate:</strong> @Model.Transaction.TransactionDate</li>
+                </ul>
+            </div>
+
+        }
+
+
+        else
+        {
+            <div class="alert alert-danger">Transaction not found.</div>
+        }
+
+        <a style="margin-left: 280px;" asp-page="/Transaction/GetTransactions" class="btn btn-back">Back to Transactions</a>
+    </div>
+
+    <!-- Optional: Add your custom JavaScript here -->
+    <script>
+        // Your custom JavaScript code goes here
+        console.log("JavaScript loaded!");
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

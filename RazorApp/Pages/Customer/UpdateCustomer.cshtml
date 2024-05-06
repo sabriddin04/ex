@@ -1,0 +1,82 @@
+@page 
+@model RazorApp.Pages.Customer.UpdateCustomerModel
+@{
+    ViewData["Title"] = "Update Customer";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Светло-серый фон */
+          
+             background-image: url('@Url.Content("~/images/er.jpg")');
+              background-size: cover; /* растянуть изображение на всю высоту блока */
+              background-position: center;
+                 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Стили для кнопок */
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">@ViewData["Title"]</h1>
+
+        <form method="post">
+            <input type="hidden" asp-for="Customer.Id" />
+
+            <div class="form-group">
+                <label asp-for="Customer.Name">Customer Name:</label>
+                <input asp-for="Customer.Name" class="form-control" />
+                <span asp-validation-for="Customer.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Customer.Email">Customer Email:</label>
+                <input asp-for="Customer.Email" class="form-control" />
+                <span asp-validation-for="Customer.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Customer.Address">Customer Address:</label>
+                <input asp-for="Customer.Address" class="form-control" />
+                <span asp-validation-for="Customer.Address" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Customer.PhoneNumber">Customer Phone Number:</label>
+                <input asp-for="Customer.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Customer.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Customer</button>
+            <a asp-page="/Customer/GetCustomers" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
